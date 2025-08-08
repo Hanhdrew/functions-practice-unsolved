@@ -9,10 +9,19 @@
  * splitFirstAndLastNames('John Smith') => ['John', 'Smith']
  */
 
-function splitFirstAndLastNames(str) {
-  return str.split(' ');
-}
+// function splitFirstAndLastNames(str) {
+//   return str.split(" ");
+// }
 
+// var splitName = splitFirstAndLastNames("Andrew Rebbe");
+// console.log(splitName);
+
+const splitFirstAndLastNames = (str) => {
+  return str.split(" ");
+};
+
+var splitName = splitFirstAndLastNames("Andrew Rebbe");
+console.log(splitName);
 
 /** =========================
  * The personAge() constant is assigned to a function, that takes an object of person Data as the argument.
@@ -20,10 +29,21 @@ function splitFirstAndLastNames(str) {
  * personAge({ id: 1, name: 'Someone', age: 32}) => 32
  */
 
-const personAge = function(personObject) {
-  return personObject.age;
-}
+// const personAge = function (personObject) {
+//   return personObject[0].age;
+// };
 
+// const peopleData = personAge([{ id: 1, name: "someone", age: 32 }]);
+
+// console.log(peopleData);
+
+const personAge = (personObject) => {
+  return personObject.age;
+};
+
+const peopleData = personAge([{ id: 1, name: "someone", age: 32 }]);
+
+console.log(peopleData);
 
 /** =========================
  * The isNameInArray function takes an array and string of name as the arguments.
@@ -32,10 +52,17 @@ const personAge = function(personObject) {
  * isNameInArray(['Jon', 'Michael', 'Andrey'], 'James') => false;
  */
 
-const isNameInArray = function(arr, name) {
-  return arr.includes(name);
-}
+// const isNameInArray = function (arr, name) {
+//   return arr.includes(name);
+// };
 
+// console.log(isNameInArray(["Jon", "Michael", "Andrey"], "Michael"));
+
+const isNameInArray = (arr, name) => {
+  return arr.includes(name);
+};
+
+console.log(isNameInArray(["Jon", "Michael", "Andrey"], "Michael"));
 
 /** =========================
  * The logTimer function takes a number as the arguments.
@@ -44,24 +71,35 @@ const isNameInArray = function(arr, name) {
  * !!! Hint: There are two functions to refactor !!!
  */
 
-const logSecondsUpToMax = function(max) {
+// const logSecondsUpToMax = function (max) {
+//   let i = 0;
+//   const timer = setInterval(function () {
+//     if (i < max) {
+//       console.log(++i);
+//     } else {
+//       clearInterval(timer);
+//     }
+//   }, 1000);
+// };
+
+const logSecondsUpToMax = (max) => {
   let i = 0;
-  const timer = setInterval(function() {
+  //this took me 2 days because i spelled interval wrong :(
+  const timer = setInterval(() => {
     if (i < max) {
       console.log(++i);
     } else {
       clearInterval(timer);
     }
   }, 1000);
-}
+};
 
-
+logSecondsUpToMax(10);
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-4"
 // If the test has all tests passed, switch to the next exercise file
 // If any of the tests fails, refactor the code and run the test command after you've fixed the function
-
 
 // Do not delete or change the lines beneath
 const f = {
@@ -69,5 +107,5 @@ const f = {
   personAge: personAge || undefined,
   isNameInArray: isNameInArray || undefined,
   logSecondsUpToMax: logSecondsUpToMax || undefined,
-}
-export { f }
+};
+export { f };
